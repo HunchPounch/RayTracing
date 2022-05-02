@@ -223,7 +223,7 @@ void paint_over(const string name, vector<Object*> &v){
 
         }
     }
-    stbi_write_bmp("kek.bmp", width, height, 3, data);
+    stbi_write_bmp("out.bmp", width, height, 3, data);
 
 }
 
@@ -232,12 +232,12 @@ void paint_over(const string name, vector<Object*> &v){
 
 int main()
 {
-    string name1 = "data1.txt";
-    string name2 = "data2.txt";
-    //cout << "Please enter file name1" << endl;
-    //cin >> name1;
-    //cout << "Please enter file name2" << endl;
-    //cin >> name2;
+    string name1;
+    string name2;
+    cout << "Please enter name of file for parameters" << endl;
+    cin >> name1;
+    cout << "Please enter name of file for objects" << endl;
+    cin >> name2;
     vector<Object*> v;
     map<string, CFactory*> objects;
     objects["Sphere"] = new CFactorySphere;
@@ -252,14 +252,5 @@ int main()
         delete *it;
     }
 
-    /*vector<float> f1{0.0 , 0.0, 1.0};
-    vector<float> f2{0.0, 0.0, -1.0};
-    vector<float> f3{-1.0, -1.0, 0.0};
-    vector<float> f4{1.0, -1.0, 0.0};
-    vector<float> f5{0.0, 1.0, 0.0};
-    float t;
-    intersect_triangle(f1,f2,f3,f4,f5,t);
-    vector<float> answ = pluss(f1,mult(f2,t));
-    cout << answ[1] << endl;*/
     return 0;
 }
