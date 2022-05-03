@@ -28,19 +28,24 @@ void ReadFileObjects(const string name, vector<Object*> &v, map<string, CFactory
     vector<float> buffer;
     int i=0;
     while(getline(fin,str)){
+
         if(i!=0) {
             buffer.clear();
         }
+
         stringstream ss(str);
         stringstream sss(str);
         dim = Size(sss)-1;
         istream_iterator<string> it;
         it = ss;
+
         if(it!=istream_iterator<string>()){
             type = (*it);
             ++it;
             i = 0;
+
             while(i<dim && it!=istream_iterator<string>()){
+
                 buffer.push_back(stof(*it));
                 i++;
                 ++it;
@@ -49,11 +54,13 @@ void ReadFileObjects(const string name, vector<Object*> &v, map<string, CFactory
             Object *w = objects[type]->Create(buffer);
             v.push_back(w);
         }
+
     }
 }
 
 
 void color_distribution(vector<Object*> &v, const vector<float> &cam){
+
     float bufdist = -1;
     float s = (float)(v.size()-1);
     vector<float> col(3);
@@ -101,6 +108,7 @@ void color_distribution(vector<Object*> &v, const vector<float> &cam){
 }
 
 void paint_over(const string name, vector<Object*> &v){
+
     ifstream fin(name);
     string buf;
     float bbuf;
@@ -114,7 +122,9 @@ void paint_over(const string name, vector<Object*> &v){
     int width;
     int height;
     Light light;
+
     map<string, int> mapping;
+
     mapping["cam"]  = 0;
     mapping["normal"]  = 1;
     mapping["up"]  = 2;
@@ -124,6 +134,7 @@ void paint_over(const string name, vector<Object*> &v){
     mapping["width"]  = 6;
     mapping["height"]  = 7;
     mapping["light"]  = 8;
+
     for(int i=0; i<9; i++){
         fin >> buf;
         switch(mapping[buf]) {
@@ -197,7 +208,7 @@ void paint_over(const string name, vector<Object*> &v){
     int i=1;
     color_distribution(v,cam);
 
-    #pragma omp parallel
+#pragma omp parallel
     {
         vector<float> buf(3);
         vector<float> AD(3);
@@ -205,18 +216,23 @@ void paint_over(const string name, vector<Object*> &v){
         vector<float> n2(normalizing(up));
         vector<float> n3(normalizing(CrossProduct(n1,n2)));
 
-    #pragma omp for private(i,j,Cx,Cy,index)
+#pragma omp for private(i,j,Cx,Cy,index)
         for (int in = 1; in <= height*width; in++)
         {
             i = in/width + 1;
             j = in-(i-1)*width;
+
             Cx = -physW/2 + dimpix/2 + (j-1)*(dimpix);
-            Cy = physH/2-(dimpix/2) - (i-1)*(dimpix);
+            Cy = physH/2 - dimpix/2 - (i-1)*(dimpix);
+
             AD[0] = AB[0]+n2[0]*Cy+n3[0]*Cx;
             AD[1] = AB[1]+n2[1]*Cy+n3[1]*Cx;
             AD[2] = AB[2]+n2[2]*Cy+n3[2]*Cx;
+
             index = j*3 + (i-1)*width*3 -3;
+
             buf = GetRayCol(cam,AD,v,light,r,limit);
+
             data[index++] = (unsigned char)buf[0];
             data[index++] = (unsigned char)buf[1];
             data[index] = (unsigned char)buf[2];
