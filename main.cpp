@@ -203,7 +203,7 @@ void paint_over(const string name, vector<Object*> &v){
     float Cy = physH/2-(dimpix/2);
     vector<float> Buf;
     int index = 0;
-    unsigned char data[height*width*3];
+    unsigned char *data = new unsigned char[height*width*3];
     int j = 1;
     int i=1;
     color_distribution(v,cam);
@@ -240,7 +240,7 @@ void paint_over(const string name, vector<Object*> &v){
         }
     }
     stbi_write_bmp("out.bmp", width, height, 3, data);
-
+	delete[] data;
 }
 
 
