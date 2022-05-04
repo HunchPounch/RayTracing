@@ -207,7 +207,7 @@ void paint_over(const string name, vector<Object*> &v){
     int j = 1;
     int i=1;
     color_distribution(v,cam);
-
+auto begin = std::chrono::steady_clock::now();
 #pragma omp parallel
     {
         vector<float> buf(3);
@@ -239,6 +239,9 @@ void paint_over(const string name, vector<Object*> &v){
 
         }
     }
+	auto end = std::chrono::steady_clock::now();
+    auto elapsed_ms = std::chrono::duration_cast<std::chrono::milliseconds>(end - begin);
+    std::cout << "Time: " << elapsed_ms.count() << " ms\n";
     stbi_write_bmp("out.bmp", width, height, 3, data);
 	delete[] data;
 }
