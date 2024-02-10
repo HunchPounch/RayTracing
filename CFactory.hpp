@@ -1,7 +1,7 @@
 #pragma once
 using namespace std;
-#include "CObject.h"
-#include "functions.h"
+#include "CObject.hpp"
+#include "functions.hpp"
 #include <iostream>
 
 class CFactory {
