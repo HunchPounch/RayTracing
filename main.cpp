@@ -113,7 +113,7 @@ void paint_over(const string name, vector<Object*> &v){
     string buf;
     float bbuf;
     vector<float> cam;
-    vector<float> normal; // от точки!!!!!!!!!!!!!!!
+    vector<float> normal; // Г®ГІ ГІГ®Г·ГЄГЁ!!!!!!!!!!!!!!!
     vector<float> up;
     vector<float> col(3);
     float r;
@@ -251,12 +251,9 @@ auto begin = std::chrono::steady_clock::now();
 
 int main()
 {
-    string name1;
-    string name2;
-    cout << "Please enter name of file for parameters" << endl;
-    cin >> name1;
-    cout << "Please enter name of file for objects" << endl;
-    cin >> name2;
+    string name1 = "parameters.txt";
+    string name2 = "objects.txt";
+	
     vector<Object*> v;
     map<string, CFactory*> objects;
     objects["Sphere"] = new CFactorySphere;
