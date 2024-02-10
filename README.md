@@ -9,7 +9,7 @@ There is some sort of viewpoint (camera) in space. Also in the space there is so
 
 The task of ray tracing is to draw a ray from the viewpoint through the center of each pixel of the screen - and see if it intersects any of the objects in the scene. If the ray intersects any of the objects, you need to paint the pixel with the desired color.
 
-An arbitrary number of spheres, tetrahedrons and parallelepipeds are acceptable as objects
+An arbitrary number of spheres, tetrahedrons and parallelepipeds are acceptable as objects. Space for an observer has the following representation: the observer looks at the corner of the origin, where the x-axis is to the left and the y-axis is to the right
 
 ## Parameter file (parameter.txt):
 1) camera coordinates x, y, z (three real numbers);
@@ -22,9 +22,15 @@ direction "up" (three real numbers);
 7) width w and height h of the screen in pixels (two integers);
 8) coordinates of the light source (three real numbers)
 
-## Oblect file 
+## Oblect file (objects.txt):
 1) a sphere is specified by enumerating the coordinates of the sphere center and then the radius
 2) tetrahedron is defined by four points in space
 3) the box is defined by two opposite corner points in space
 
 Examples of completed files can be found in the repository
+
+## Result:
+
+<p align="center">
+  <img src="screenshots/out.png" alt="Ray Image">
+</p>
