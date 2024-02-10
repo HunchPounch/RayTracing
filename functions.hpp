@@ -1,8 +1,8 @@
 #pragma once
 #include <iostream>
 using namespace std;
-#include "CObject.h"
-#include "CLight.h"
+#include "CObject.hpp"
+#include "CLight.hpp"
 #include <vector>
 #include <iterator>
 #include <cmath>
