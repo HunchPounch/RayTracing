@@ -1,5 +1,5 @@
-#include "CSphere.h"
-#include "functions.h"
+#include "CSphere.hpp"
+#include "functions.hpp"
 
 
 Sphere::Sphere(vector<float> buffer){
