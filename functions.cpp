@@ -1,5 +1,5 @@
-#include "functions.h"
-#include "template.h"
+#include "functions.hpp"
+#include "template.hpp"
 
 
 float Det2x2(float a11,float a12,float a21,float a22){
