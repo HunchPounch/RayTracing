@@ -1,7 +1,7 @@
 #pragma once
-#include "CObject.h"
-#include "functions.h"
-#include "CSphere.h"
+#include "CObject.hpp"
+#include "functions.hpp"
+#include "CSphere.hpp"
 
 class Tetra : public Object {
 
