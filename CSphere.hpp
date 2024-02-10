@@ -1,6 +1,6 @@
 #pragma once
-#include "CObject.h"
-#include "functions.h"
+#include "CObject.hpp"
+#include "functions.hpp"
 
 
 class Sphere : public Object {
