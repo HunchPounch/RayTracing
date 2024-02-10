@@ -11,6 +11,9 @@ The task of ray tracing is to draw a ray from the viewpoint through the center o
 
 An arbitrary number of spheres, tetrahedrons and parallelepipeds are acceptable as objects. Space for an observer has the following representation: the observer looks at the corner of the origin, where the x-axis is to the left and the y-axis is to the right
 
+The project is written in pure c++, except that one library for sketching bmp file was used.
+The project includes various OOP methods such as Factories, virtual methods, inheritance, as well as the project includes parallel computation with OpenMP and even a small part of the BVH method.
+
 ## Parameter file (parameter.txt):
 1) camera coordinates x, y, z (three real numbers);
 2) coordinates of the normal vector to the screen (three real numbers);
