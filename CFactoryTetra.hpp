@@ -1,7 +1,7 @@
 #pragma once
 using namespace std;
-#include "CFactory.h"
-#include "CTetra.h"
+#include "CFactory.hpp"
+#include "CTetra.hpp"
 #include <iostream>
 
 class CFactoryTetra : public CFactory {
