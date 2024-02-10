@@ -1,4 +1,4 @@
-#include "CBox.h"
+#include "CBox.hpp"
 
 
 Box::Box(vector<float> buffer){
