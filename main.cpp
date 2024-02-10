@@ -1,20 +1,20 @@
 #include <iostream>
 using namespace std;
-#include "CObject.h"
-#include "CFactory.h"
-#include "functions.h"
-#include "CLight.h"
-#include "CFactorySphere.h"
-#include "CFactoryBox.h"
-#include "CFactoryTetra.h"
-#include "template.h"
+#include "CObject.hpp"
+#include "CFactory.hpp"
+#include "functions.hpp"
+#include "CLight.hpp"
+#include "CFactorySphere.hpp"
+#include "CFactoryBox.hpp"
+#include "CFactoryTetra.hpp"
+#include "template.hpp"
 #define STB_IMAGE_IMPLEMENTATION
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb_image_write.h"
 #define PI 3.14159265
 #include <omp.h>
 #include <algorithm>
-#include "template.h"
+#include "template.hpp"
 typedef map<string, CFactory*> objects;
 
 
