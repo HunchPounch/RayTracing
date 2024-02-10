@@ -1,7 +1,7 @@
 #pragma once
 using namespace std;
-#include "CFactory.h"
-#include "CBox.h"
+#include "CFactory.hpp"
+#include "CBox.hpp"
 #include <iostream>
 
 class CFactoryBox : public CFactory {
