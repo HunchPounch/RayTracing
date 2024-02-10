@@ -1,4 +1,4 @@
-#include "CTetra.h"
+#include "CTetra.hpp"
 
 
 Tetra::Tetra(vector <float> buffer){
