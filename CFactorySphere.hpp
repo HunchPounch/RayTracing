@@ -1,7 +1,7 @@
 #pragma once
 using namespace std;
-#include "CFactory.h"
-#include "CSphere.h"
+#include "CFactory.hpp"
+#include "CSphere.hpp"
 #include <iostream>
 
 class CFactorySphere : public CFactory {
