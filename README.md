@@ -29,7 +29,7 @@ direction "up" (three real numbers);
 1) a sphere is specified by enumerating the coordinates of the sphere center and then the radius
 2) tetrahedron is defined by four points in space
 3) the box is defined by two opposite corner points in space
-
+The file can contain an unlimited number of figures in any order
 Examples of completed files can be found in the repository
 
 ## Result:
