@@ -32,6 +32,11 @@ direction "up" (three real numbers);
 The file can contain an unlimited number of figures in any order
 Examples of completed files can be found in the repository
 
+## Installation:
+1) clone the repository
+2) edit your parameters in .txt files
+3) run main.cpp
+
 ## Result:
 
 <p align="center">
