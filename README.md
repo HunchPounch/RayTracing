@@ -1,43 +1,42 @@
 # RayTracing
-## Description:
+## Постановка и описание:
 
-There is some sort of viewpoint (camera) in space. Also in the space there is some three-dimensional structure (scene). Between them there is a rectangle divided into square pixels (screen).
+В пространстве есть некая точка обзора (камера). Также в пространстве находится некая трехмерная структура (сцена). Между ними находится прямоугольник, разделенный на квадратные пиксели (экран).
 
 <p align="center">
   <img src="screenshots/ray.png" alt="Ray Image">
 </p>
 
-The task of ray tracing is to draw a ray from the viewpoint through the center of each pixel of the screen - and see if it intersects any of the objects in the scene. If the ray intersects any of the objects, you need to paint the pixel with the desired color.
+Задача трассировки лучей состоит в том, чтобы провести луч из точки обзора через центр каждого пикселя экрана - и посмотреть, пересекает ли он какой-либо объект в сцене. Если луч пересекает какой-либо объект, нужно закрасить пиксель нужным цветом.
 
-An arbitrary number of spheres, tetrahedrons and parallelepipeds are acceptable as objects. Space for an observer has the following representation: the observer looks at the corner of the origin, where the x-axis is to the left and the y-axis is to the right
+В качестве объектов можно использовать произвольное количество сфер, тетраэдров и параллелепипедов.Пространство для наблюдателя имеет следующее представление: наблюдатель смотрит в угол начала координат, где ось x направлена влево, а ось y - вправо
 
-The project is written in pure c++, except that one library for sketching bmp file was used.
-The project includes various OOP methods such as Factories, virtual methods, inheritance, as well as the project includes parallel computation with OpenMP and even a small part of the BVH method.
+Проект написан на чистом c++, за исключением того, что использовалась одна библиотека для заполнения bmp файла.
+Проект включает в себя различные методы ООП, такие как фабрики, виртуальные методы, наследование, а также  параллельные вычисления с OpenMP и небольшую часть метода BVH.
 
 ## Parameter file (parameter.txt):
-1) camera coordinates x, y, z (three real numbers);
-2) coordinates of the normal vector to the screen (three real numbers);
-3) coordinates of the vector perpendicular to the normal to the screen, which defines
-direction "up" (three real numbers);
-4) distance from the camera to the screen a0 (one real number);
-5) distance from the camera to the boundary of visibility a0+ a1 (one real number); 
-6) vertical viewing angle α (one real number);
-7) width w and height h of the screen in pixels (two integers);
-8) coordinates of the light source (three real numbers)
+1) Координаты камеры x, y, z (три действительных числа);
+2) координаты нормали к экрану (три действительных числа);
+3) координаты вектора перпендикулярного нормали к экрану, определяющий направление "up" (три действительных числа);
+4) расстояние от камеры до экрана a0 (одно действительное число);
+5) расстояние от камеры до границы видимости a0+ a1 (одно действительное число); 
+6) вертикальный угол обзора α (одно действительное число);
+7) ширина w и высота h экрана в пикселях (два целых числа);
+8) координаты источника света (три действительных числа)
 
 ## Oblect file (objects.txt):
-1) a sphere is specified by enumerating the coordinates of the sphere center and then the radius
-2) tetrahedron is defined by four points in space
-3) the box is defined by two opposite corner points in space.                                                                                                           
-The file can contain an unlimited number of figures in any order
-Examples of completed files can be found in the repository
+1) сферы задаеются перечислением координат центра, а затем радиуса
+2) Тетраэдры определяются четырьмя точками в пространстве
+3) Параллелипеды определяются двумя противоположными угловыми точками в пространстве.                                                                                                     
+Файл может содержать неограниченное количество фигур в любом порядке
+Примеры готовых файлов можно найти в репозитории
 
-## Simple installation:
-1) clone the repository
-2) edit your parameters in .txt files
-3) run main.cpp
+## Наивная установка:
+1) клонируйте репозиторий
+2) измените параметры в .txt файлах
+3) запустите main.cpp
 
-## Result:
+## Результат:
 
 <p align="center">
   <img src="screenshots/out.png" alt="Ray Image">
